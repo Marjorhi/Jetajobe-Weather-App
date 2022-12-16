@@ -4,12 +4,15 @@ const app = express()
 
 //app.com
 app.get('', (req, res) => { //Customize what we're going to send back to the requester
-    res.send('Hi express!')
+    res.send('<h1>Weather</h1>')
 })
 
 //app.com/help
 app.get('/help', (req, res) => {
-    res.send('Help page')
+    res.send({
+        name: 'Marjorie Jetajobe',
+        age : 20
+    })
 })
 
 //app.com/about
