@@ -80,6 +80,15 @@ app.get('/weather', (req, res) => {
 }) //Setup weather route to send back to JSON
 
 
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Marjorie Flores Jetajobe',
+        errorMessage: '404! Page not found.'
+    })
+})
+
+
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
 })
