@@ -80,7 +80,12 @@ app.get('/weather', (req, res) => {
 }) //Setup weather route to send back to JSON
 
 
-app.get('/products', (req, res) => {
+app.get('/products', (req, res) => { // When there is no search term
+    if (!req.query.search) {
+        return res.send({
+            error: 'You must provide a search term' //Setting up an error message with feed
+        })
+    }
 
     console.log(req.query.search)
     res.send({
