@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public') //Generate path to public folder
 
-
+app.set('view engine', 'hbs')
 app.use(express.static(publicDirectoryPath)) //Passing public directory path to the static function
 
 
