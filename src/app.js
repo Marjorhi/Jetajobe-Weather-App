@@ -81,7 +81,8 @@ app.get('/weather', (req, res) => {
 
     res.send({
         forecast : 'Moderate Breeze',
-        location : 'Sorsogon'
+        location : 'Sorsogon',
+        address: req.query.address
     })
 }) //Setup weather route to send back to JSON
 
