@@ -9,21 +9,25 @@ app.get('', (req, res) => { //Customize what we're going to send back to the req
 
 //app.com/help
 app.get('/help', (req, res) => {
-    res.send({
-        name: 'Marjorie Jetajobe',
-        age : 20
-    })
+    res.send([{
+        name : 'Marjorie Jetajobe'
+    },{
+        name : 'Solon'
+    }])
 })
 
 //app.com/about
 app.get('/about', (req, res) => {
-    res.send('About')
+    res.send('<h1>About</h1>')
 })
 
 //app.com/weather
 app.get('/weather', (req, res) => {
-    res.send('Weather')
-})
+    res.send({
+        forecast : 'Moderate Breeze',
+        location : 'Sorsogon'
+    })
+}) //Setup weather route to send back to JSON
 
 
 app.listen(3000, () => {
