@@ -73,16 +73,28 @@ app.get('/help', (req, res) => {
 
 //app.com/weather
 app.get('/weather', (req, res) => {
-    if (!req.query.address) { //Sending back an error message when no address is provided
+    if (!req.query.cityName) { //Sending back an error message when no cityName is provided
         return res.send({
-            error: 'You must provide an address!'
+            error: 'You must provide an cityName!'
         })
     }
+
+    geocode(req.query.cityName, (error, { latitude, longitude, location } = {}) => {
+        if (error) {
+            return res.send({ error })
+        }
+
+        forecast(latitude, longitude, (error, forecastData) => {
+            if (error) {
+                return res.send({ error })
+            }
 
     res.send({
         forecast : 'Moderate Breeze',
         location : 'Sorsogon',
-        address: req.query.address //Add address property onto JSON which returns the provided address
+        cityName: req.query.cityName //Add cityName property onto JSON which returns the provided cityName
+             })
+        })
     })
 }) //Setup weather route to send back to JSON
 
