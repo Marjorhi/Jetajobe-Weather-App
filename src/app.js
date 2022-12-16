@@ -35,6 +35,10 @@ app.get('', (req, res) => {
     }) //Rendering dynamic content from index.hbs
 })
 
+app.get('/about', (req, res) => {
+    res.render('about')
+})
+
 //app.com/weather
 app.get('/weather', (req, res) => {
     res.send({
