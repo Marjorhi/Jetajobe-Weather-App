@@ -80,6 +80,16 @@ app.get('/weather', (req, res) => {
 }) //Setup weather route to send back to JSON
 
 
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Marjorie Flores Jetajobe',
+        errorMessage: 'Help article not found.'
+    })
+})
+
+
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
