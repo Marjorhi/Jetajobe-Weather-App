@@ -17,7 +17,8 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
-hbs.registerPartials(partialsPath)
+hbs.registerPartials(partialsPath)//Contains the path that the handlebars module need
+
 
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath)) //Passing public directory path to the static function
