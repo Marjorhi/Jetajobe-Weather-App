@@ -24,7 +24,27 @@ h1 {
 }
 
 header a {
-    color: #fff;
+    color: rgb(15, 5, 71);
     margin-right: 16px;
     text-decoration: none;
+}
+
+.portrait {
+    width: 250px;
+}
+
+p {
+    color: rgb(43, 24, 87);
+}
+
+input {
+    border: 1px solid rgb(46, 12, 44);
+    padding: 8px;
+}
+
+button {
+   cursor: pointer;
+   border: 1px solid rgb(22, 21, 21);
+   background: rgb(63, 63, 63);
+   padding: 8px; 
 }

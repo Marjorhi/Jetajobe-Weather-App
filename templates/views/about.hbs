@@ -4,15 +4,18 @@
 
 <head>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
     
 </head>
 
 
 <body>
-    {{>header}}
-
-    <h1>{{title}}</h1>
-    <img src="/img/sun.png">
+ <div class="main-content">
+        {{>header}}
+        <p>This site uses data from openweathermap.org.</p>
+        <img class="portrait" src="/img/sun.png">
+    </div>
 
     {{>footer}}
 </body>
