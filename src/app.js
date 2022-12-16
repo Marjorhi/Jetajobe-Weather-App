@@ -80,6 +80,13 @@ app.get('/weather', (req, res) => {
 }) //Setup weather route to send back to JSON
 
 
+app.get('/products', (req, res) => {
+
+    console.log(req.query.search)
+    res.send({
+        products: []
+    })
+})
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
