@@ -36,7 +36,10 @@ app.get('', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-    res.render('about')
+    res.render('about', {
+        title: 'About Weather App',
+        name: 'Marjorie Flores Jetajobe'
+    })
 })
 
 //app.com/weather
