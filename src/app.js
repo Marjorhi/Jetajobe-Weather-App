@@ -5,15 +5,15 @@ const app = express()
 
 
 
-//Define paths for Express config
+// Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public') //Generate path to public folder
 const viewsPath = path.join(__dirname, '../templates')
 
-
+// Setup handlebars engine and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 
-// Setup handlebars engine and views location
+// Setup static directory to serve
 app.use(express.static(publicDirectoryPath)) //Passing public directory path to the static function
 
 
