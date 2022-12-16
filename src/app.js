@@ -28,6 +28,9 @@ app.use(express.static(publicDirectoryPath)) //Passing public directory path to 
 //     res.send('<h1>About</h1>')
 // })
 
+app.get('', (req, res) => {
+    res.render('index') //Rendering dynamic content from index.hbs
+})
 //app.com/weather
 app.get('/weather', (req, res) => {
     res.send({
