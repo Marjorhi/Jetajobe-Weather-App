@@ -1,14 +1,12 @@
 const path = require ('path')
 const express = require('express')
 
-console.log(__dirname)
-console.log(path.join(__dirname, '../public'))
 
 const app = express()
-const publicDirectoryPath = path.join(__dirname, '../public')
+const publicDirectoryPath = path.join(__dirname, '../public') //Generate path to public folder
 
 
-app.use(express.static(publicDirectoryPath)) //Passing Public Directory Path
+app.use(express.static(publicDirectoryPath)) //Passing public directory path to the static function
 
 
 //app.com
