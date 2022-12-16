@@ -73,6 +73,12 @@ app.get('/help', (req, res) => {
 
 //app.com/weather
 app.get('/weather', (req, res) => {
+    if (!req.query.address) { //Sending back an error message when no address is provided
+        return res.send({
+            error: 'You must provide an address!'
+        })
+    }
+
     res.send({
         forecast : 'Moderate Breeze',
         location : 'Sorsogon'
@@ -83,7 +89,7 @@ app.get('/weather', (req, res) => {
 app.get('/products', (req, res) => { // When there is no search term
     if (!req.query.search) {
         return res.send({
-            error: 'You must provide a search term' //Setting up an error message with feed
+            error: 'You must provide a search term' //Setting up an error message with feedback
         })
     }
 
