@@ -1,12 +1,12 @@
 const path = require ('path')
 const express = require('express')
 const hbs = require('hbs')
-const geocode = require('./utils/geocode')
+const geoCode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 
 const app = express()
-
+const port = process.env.PORT || 3000
 
 
 // Define paths for Express config
@@ -81,20 +81,20 @@ app.get('/weather', (req, res) => {
     }
 
     //Using the cityName to geoCode
-    geoCode(req.query.cityName, (error, { latitude, longitude, location } = {}) => {
+    geoCode(req.query.cityName, (error, { longitude, latitude, location } = { }) => {
         if (error) {
             return res.send({ error })
-        }
+        } 
 
-        //Using the cooridnates to get forecast
-        forecast(latitude, longitude, (error, forecastData) => {
+        //Using the coordinates to get forecast
+        forecast( longitude, latitude, (error, forecastData) => {
             if (error) {
                 return res.send({ error })
             }
-
-    res.send({
-        forecast : 'Moderate Breeze',
-        location : 'Sorsogon',
+            
+        res.send({
+        forecast : forecastData,
+        location,
         cityName: req.query.cityName //Add cityName property onto JSON which returns the provided cityName
              })
         })
