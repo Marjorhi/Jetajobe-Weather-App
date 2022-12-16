@@ -1,6 +1,15 @@
+const path = require ('path')
 const express = require('express')
 
+console.log(__dirname)
+console.log(path.join(__dirname, '../public'))
+
 const app = express()
+const publicDirectoryPath = path.join(__dirname, '../public')
+
+
+app.use(express.static(publicDirectoryPath)) //Passing Public Directory Path
+
 
 //app.com
 app.get('', (req, res) => { //Customize what we're going to send back to the requester
