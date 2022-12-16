@@ -28,6 +28,8 @@ app.use(express.static(publicDirectoryPath)) //Passing public directory path to 
 //     res.send('<h1>About</h1>')
 // })
 
+
+// http://localhost:3000/
 app.get('', (req, res) => {
     res.render('index', {
         title : 'Weather App',
@@ -35,9 +37,21 @@ app.get('', (req, res) => {
     }) //Rendering dynamic content from index.hbs
 })
 
+
+//http://localhost:3000/about
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Weather App',
+        name: 'Marjorie Flores Jetajobe'
+    })
+})
+
+
+//http://localhost:3000/help
+app.get('/help', (req, res) => {
+    res.render('help', {
+        helpText: 'Helpful text!',
+        title: 'Weather App Help',
         name: 'Marjorie Flores Jetajobe'
     })
 })
