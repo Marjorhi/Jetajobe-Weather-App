@@ -1,6 +1,6 @@
 body {
     color: #333333;
-    font-family: Arial;
+    font-family: 'Poppins', sans-serif;
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
@@ -38,13 +38,20 @@ p {
 }
 
 input {
-    border: 1px solid rgb(46, 12, 44);
+    border: 1px solid #55aef6;
     padding: 8px;
+    font-family: 'Poppins', sans-serif;
 }
 
 button {
    cursor: pointer;
    border: 1px solid rgb(22, 21, 21);
-   background: rgb(63, 63, 63);
-   padding: 8px; 
+   background: #55aef6;
+   padding: 8px;  
+   border: 2px solid #55aef6;
+   border-radius:10px;
+   color: #ffffff;
+   text-align: center;
+   text-decoration: none;
+   font-family: 'Poppins', sans-serif;
 }
