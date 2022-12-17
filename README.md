@@ -2,6 +2,6 @@
 
 ## installation and running locally
 
-**npm install**
-**npm start (port 3000)**
-**npm run dev (nodemon) (port 3000)**
+**_npm install_**
+**_npm start (port 3000)_**
+**_npm run dev (nodemon) (port 3000)_**
