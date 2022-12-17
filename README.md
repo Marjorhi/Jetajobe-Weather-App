@@ -1,5 +1,4 @@
 # Jetajobe-Weather-App
-Live: https://jetajobe-weather-api.azurewebsites.net/
 
 ## installation and running locally
 
